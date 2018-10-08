@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Lautan"
+date: 2018-10-03
+description: 
+image: /assets/images/placeholder-12.jpg
+author: Muhammad Dhia Ul Haq
+tags: 
+  - Dummy Text
+  - Moon Drinking
+  - Kale
+---
+Pada tahun 1867 ada dua anak kecil pergi ke dermaga dan disana mereka melihat banyak air.

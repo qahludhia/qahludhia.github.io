@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Sepeda"
+date: 2018-10-03
+description: 
+image: /assets/images/placeholder-1.jpg
+author: Muhammad Dhia Ul Haq
+tags: 
+  - Squid
+  - Moon Drinking
+  - Kale
+---
+Sepeda adalah kendaraan senderhana yang memiliki 2 roda, dan menggunakan sepeda dapat dapat membuat tubuh anda sehat dan kuat.

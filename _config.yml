@@ -1,0 +1,58 @@
+# Site/SEO settings
+email: okay@samesies.io
+baseurl: ""
+paginate: 12
+paginate_path: "/page/:num"
+permalink: /:year/:month/:day/:title/
+google_analytics: 
+
+name: Muhammad Dhia Ul Haq
+title: Dhia Ul Haq
+description: >
+  Barber is a blog theme for Jekyll built by Thomas Vaeth for Samesies using HTML, Sass, and JavaScript.
+url: http://barber.samesies.io
+twitter_username: ziulhaq
+default_img: /assets/images/seo.jpg
+social:
+  - name: twitter
+    url: https://twitter.com/ziulhaq
+  - name: instagram
+    url: https://www.instagram.com/dhiulhaq
+  - name: github
+    url: https://github.com/qahludhia
+
+# Contact settings
+contact_img: /assets/images/placeholder-28.jpg
+formcarry: https://formcarry.com/s/HkIo0nMb7
+
+# Disqus settings
+disqus: test-apkdzgmqhj
+
+# MailChimp settings
+mailchimp_action: https://samesies.us17.list-manage.com/subscribe/post-json?u=66ddf555dab480e6a8606430b&amp;id=89b3ee034f
+mailchimp_input: b_66ddf555dab480e6a8606430b_89b3ee034f
+
+# Author settings
+author:
+  - name: Muhammad Dhia Ul Haq
+    bio: Muhammad Dhia Ul Haq was born in Jakarta, Indonesia. And now live in Yogyakarta
+    url: http://dhiaulhaq.com
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+compress_html:
+  clippings: all
+  comments: all
+  startings: [html, head, body]
+exclude:
+  - node_modules
+  - .DS_Store
+  - barber.jpg
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.js
+  - package.json
+  - README.md

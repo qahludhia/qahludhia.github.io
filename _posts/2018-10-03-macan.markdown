@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Macan"
+date: 2018-10-03
+description: 
+image: /assets/images/placeholder-5.jpg
+author: Muhammad Dhia Ul Haq
+tags: 
+  - Squid
+  - Moon Drinking
+  - Kale
+---
+Macan adalah hewan karnivora yang memakan daging.

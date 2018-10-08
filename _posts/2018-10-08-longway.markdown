@@ -1,0 +1,9 @@
+---
+layout: post
+title: "Monochrome"
+date: 2018-10-03
+description: 
+image: /assets/images/longway.jpg
+author: Muhammad Dhia Ul Haq
+---
+

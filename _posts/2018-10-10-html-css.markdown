@@ -1,16 +1,16 @@
 ---
 layout: post
 title: "HTML & CSS"
-date: 2017-10-10
+date: 2018-10-10
 description: 
-image: /assets/images/placeholder-15.jpg
+image: /assets/images/html.png
 author: Muhammad Dhia Ul Haq
 ---
-Mungkin HTML & CSS itu hal yang sulit untuk dipisahkan dalam membuat website. Ibarat manusia, HTML itu seperti badan kita, dan CSS itu sebagai pakaian yang kita pakai. Masih kurang paham? Mari kita lihat website [I'm an inline-style link](https://detik.com) jika tidak menggunakan CSS.
+Mungkin HTML & CSS itu hal yang sulit untuk dipisahkan dalam membuat website. Ibarat manusia, HTML itu seperti badan kita, dan CSS itu sebagai pakaian yang kita pakai. Masih kurang paham? Mari kita lihat website [https://detik.com] jika tidak menggunakan CSS.
 
 ![Placeholder](/assets/images/detik.png)
 
-Bagaimana perasaan anda saat melihat website [I'm an inline-style link](https://detik.com) jika tidak menggunakan CSS? Agak gimana gitu kan? Padahal aslinya seperti ini.
+Bagaimana perasaan anda saat melihat website [https://detik.com] jika tidak menggunakan CSS? Agak malas membacanya? Padahal aslinya seperti ini.
 
 ![Placeholder](/assets/images/detikhtml.png)
 

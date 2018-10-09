@@ -1,0 +1,22 @@
+---
+layout: post
+title: "Linux"
+date: 2018-10-03
+description: 
+image: /assets/images/linux.png
+author: Muhammad Dhia Ul Haq
+---
+Apakah anda familiar dengan gambar diatas? Mungkin bagi sebagian orang tidak tau apa maksud dari penguin imut yang satu ini. Ya, itu adalah Linux. Salah satu Operation System yang terkenal dikalangan para "Programmer".
+
+Ya, mungkin itu perkenalannya. Saya mau berbagi pengalaman saya menggunakan OS yang satu ini. 
+
+Pada pertama kalinya, saya agak kebingungan menggunakan OS yang satu ini, karena beda jauh dengan OS yang saya gunakan sebelumnya, Windows. 
+
+Kalau di Windows ada .exe, di Linux ada .deb yang mana untuk mencari aplikasi populer di Windows tidak semuanya ada.
+
+Di OS ini kita juga banyak menggunakan Terminal (Semacan CMD di Windows) untuk menginstall aplikasi, memindahkan file, dan hal-hal yang sederhana lainnya (Walaupun bukan keharusan). 
+
+Awalnya memang agak sulit, tapi lama-lama hal itu malah jadi memudahkan kita, dan membuat waktu kita lebih efisien karena tidak perlu masuk ke files untuk melakukan hal-hal sederhana, seperti rename, pindah file, dan lain-lain.
+
+Mungkin itu pengalaman pertama yang saya dapat saat menggunakan OS Linux.
+

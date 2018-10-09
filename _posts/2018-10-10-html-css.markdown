@@ -1,0 +1,24 @@
+---
+layout: post
+title: "HTML & CSS"
+date: 2017-10-10
+description: 
+image: /assets/images/placeholder-15.jpg
+author: Muhammad Dhia Ul Haq
+---
+Mungkin HTML & CSS itu hal yang sulit untuk dipisahkan dalam membuat website. Ibarat manusia, HTML itu seperti badan kita, dan CSS itu sebagai pakaian yang kita pakai. Masih kurang paham? Mari kita lihat website [I'm an inline-style link](https://detik.com) jika tidak menggunakan CSS.
+
+![Placeholder](/assets/images/detik.png)
+
+Bagaimana perasaan anda saat melihat website [I'm an inline-style link](https://detik.com) jika tidak menggunakan CSS? Agak gimana gitu kan? Padahal aslinya seperti ini.
+
+![Placeholder](/assets/images/detikhtml.png)
+
+Jadi begitu, walaupun CSS itu hanya hal sekunder, ia juga berperan penting dalam website, karena banyak orang yang lebih tertarik untuk mengunjungi website yang tampilannya menarik untuk dilihat, walaupun masih ada beberapa website yang tidak menggunakan CSS tapi masih banyak juga pengunjungnya.
+
+
+Mungkin itu dari saya, kalau ada yang salah dari tulisan diatas, bisa hubungi kontak saya yang ada dibawah, karena kritik & saran itu perlu. 
+
+Terima kasih.
+
+

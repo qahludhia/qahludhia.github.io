@@ -1,13 +1,9 @@
 ---
 layout: post
 title: "Bunga"
-date: 2017-10-19
+date: 2018-10-03
 description: 
 image: /assets/images/placeholder-4.jpg
 author: Muhammad Dhia Ul Haq
-tags: 
-  - Dummy Text
-  - Moon Drinking
-  - Kale
 ---
-Tidak semua bunga itu indah, ada juga bunga bank yang bisa membuat diri kita sengsara.
+Bunga tidak perlu menyatakan bahwa dirinya indah.

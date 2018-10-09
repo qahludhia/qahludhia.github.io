@@ -10,7 +10,7 @@ Mungkin bagi sebagian orang tidak tau siapa beliau. Beliau adalah Richard Stallm
 
 Beliau seorang extrimis, pendapat-pendapat beliau selalu kontroversial. Dia mendirikan GNU dan membuat "Copyleft" (Lawan dari Copyright) yang artinya, bahwa seluruh software itu harusnya gratis, dan pengguna bebas untuk memodifikasinya menggunakan source code yang ada.
 
-##Tingkatan Free Software
+#Tingkatan Free Software
 
 Berikut adalah tingkatan menurut Richard Stallman dan Free sofware foundation :
  

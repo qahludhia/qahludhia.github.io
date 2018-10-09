@@ -9,10 +9,10 @@ google_analytics:
 name: Muhammad Dhia Ul Haq
 title: Dhia Ul Haq
 description: >
-  Barber is a blog theme for Jekyll built by Thomas Vaeth for Samesies using HTML, Sass, and JavaScript.
+  Hanya sebuah blog sederhana.
 url: http://dhiaulhaq.com
 twitter_username: ziulhaq
-default_img: /assets/images/seo.jpg
+default_img: /assets/images/wkwk.png
 social:
   - name: twitter
     url: https://twitter.com/ziulhaq

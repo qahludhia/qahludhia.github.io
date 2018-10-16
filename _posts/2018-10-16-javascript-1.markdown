@@ -6,7 +6,7 @@ description:
 image: /assets/images/nyoba.gif
 author: Muhammad Dhia Ul Haq
 ---
-##Pengertian JavaScript
+## Pengertian JavaScript
 
 JavaScript adalah sebuah bahasa pemrograman yang bisa dikolaborasikan dengan HTML & CSS dalam membentuk sebuah web yang interaktif. 
 

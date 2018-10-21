@@ -1,0 +1,28 @@
+---
+layout: post
+title: "Github"
+date: 2018-10-16
+description: 
+image: /assets/images/github.png
+author: Muhammad Dhia Ul Haq
+---
+## Apa itu GitHub ?
+
+#### Pengertian GitHub versi Wikipedia
+
+GitHub adalah layanan penginangan web bersama untuk proyek pengembangan perangkat lunak yang menggunakan sistem pengontrol versi Git dan layanan hosting internet. Hal ini banyak digunakan untuk kode komputer. Ini memberikan kontrol akses dan beberapa fitur kolaborasi seperti pelacakan bug, permintaan fitur, manajemen tugas, dan wiki untuk setiap proyek.
+
+GitHub menawarkan paket repositori pribadi dan gratis pada akun yang sama dan digunakan untuk proyek perangkat lunak sumber terbuka. Pada bulan April 2017, GitHub melaporkan bahwa mereka mempunyai lebih dari 20 juta pengguna dan lebih dari 57 juta repositori, menjadikannya layanan terbesar dari kode sumber di dunia.
+
+#### GitHub menurut saya
+
+Kalo yang saya bisa simpulkan, GitHub itu seperti social media tapi, disana bukan untuk nge-share foto liburan, status-status galau, dll. Di GitHub kita bisa membagikan source code dari project yang kita kerjakan dan orang bisa menambahkan atau mengedit jika ada yang salah dalam code di project kita, pun sebaliknya. 
+
+## Pentingkah GitHub itu?
+
+Penting banget. Karena itu bisa jadi portfolio kita untuk nyari kerja, (yang tentunya berhubungan dengan komputer, kalo kalian mau jadi pengusaha atau kerjaan yang berhubungan dengan komputer si gapenting-penting banget) disitus-situs seperti https://linkedin.com/, https://www.upwork.com/, dan semacamnya.
+
+## Terima Kasih
+Mungkin itu yang dapat saya tulis kali ini, sebagaimana biasanya, kritik & saran sangat diperlukan dalam tulisan saya agar menjadi lebih baik lagi kedepannya. Jadi, kalian bisa hubungi saya lewat Twitter ataupun Instagram yang tertera dibagian paling bawah web saya. 
+
+Terima Kasih. 

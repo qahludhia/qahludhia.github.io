@@ -1,0 +1,87 @@
+---
+layout: post
+title: "Linux #1: Find"
+date: 2018-10-22
+description: 
+image: /assets/images/linux.jpg
+author: Muhammad Dhia Ul Haq
+---
+Pada postingan kali ini saya akan membahas tentang command **find** di Linux
+
+## Find
+Apa sebenarnya fungsi **find** di command linux? Ya dari arti aja kita udah tau, pasti fungsinya buat nyari. Tapi nyari apa?Jawabannya **Banyak** Kita bisa nyari file, folder, dan lain-lain.
+
+## Bagaimana cara kegunaanya?
+
+##### Yang Pertama
+
+```console
+find -name "filemu.ekstensinya"
+```
+Itu cara untuk mencari file di current directory. Kamu bisa menambah dimana directory yang kamu mau dengan cara seperti ini
+
+```console
+find /namafolder -name "filemu.ekstensinya"
+```
+Kamu juga bisa menggunakan wildcard(*) jika kamu ingin mecari file yang berekstensi .txt tapi kamu tidak tau nama file itu atau sebaliknya. Seperti ini
+
+```console
+find -name "*.ekstensinya"
+```
+##### Yang Kedua
+
+```console
+find -iname "filemu.ekstensinya"
+```
+Cara ini sama seperti diatas, perbedaannya dengan diatas adalah dia tidak memandang huruf kapital. Jika kamu mempunyai nama file misalnya teks.txt atau TEKS.txt maka dia akan menemukan keduanya, beda dengan "-name" yang hanya mengeluarkan nama file sesuai dengan yang kamu cari. Misalnya kamu mencari text.txt maka dia hanya akan mengeluarkan hasil itu, padahal kamu mempunyai file lain yang namanya sama tapi besar-kecilnya berbeda.
+
+##### Yang Ketiga
+
+```console
+find -not -name (nama file)
+find -not -iname (nama file)
+```
+Cara ini hanya kebalikan dari dua cara yang diatas, dia menghasilkan file yang namanya bukan nama file yang kamu cari, simple.
+
+##### Yang Keempat
+
+```console
+find -type c (mencari device)
+find -type d (mencari folder/directory)   
+find -type l (mencari log)	
+```
+Kalau yang ini sebenarnya hanya pelengkap dari command-command diatas, jadi semua command ini bisa dikombinasikan dengan command-command yang diatas, saya akan menerangkannya dibawah nanti.
+
+##### Yang Kelima
+
+```console
+which inkscape(program)	
+```
+
+Cara ini mungkin seperti **Open file location** yang ada di Windows. Jadi kita melihat folder asli dari program yang kita maksud.
+
+##### Yang Keenam
+
+```console
+find -user (nama user) (melihat folder user tertentu)
+find -perm (kode rwx)  (melihat premission dari file)
+find -(i)name "contoh.txt" -exec chmod 777 {} \; (merubah permission)
+```
+
+Mungkin cara yang diatas ini terlalu sulit untuk pemula seperti saya, saya juga bingung bagaimana menjelaskan hal diatas, tapi yang dapat saya tangkap ya seperti itu.
+
+
+
+##### Misal
+Ini adalah lanjutan dari cara yang keempat diatas.
+Misalnya kita ingin mencari folder dengan naman **fun** tapi kita tidak tau dimana folder itu kita tinggal mengetikkan:
+
+```console
+find / -type d -iname fun
+```
+(/)backslash disitu maksudnya adalah root, jadi file atau folder bisa dicari lewat situ. Kamu juga bisa menggantinya terserah kamu, misalnya kamu mau mencari di /media bebas, tapi (/)backslash disitu digunakan jika kamu tidak tau kamu menaruh folder yang kamu cari dimana, atau istilahnya (/)backslash itu puncak file tertinggi.
+
+## Terima Kasih
+Mungkin itu yang dapat saya tulis kali ini, sebagaimana biasanya, kritik & saran sangat diperlukan dalam tulisan saya agar menjadi lebih baik lagi kedepannya. Jadi, kalian bisa hubungi saya lewat Twitter ataupun Instagram yang tertera dibagian paling bawah web saya. 
+
+Terima Kasih. 

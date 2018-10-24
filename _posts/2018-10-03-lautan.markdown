@@ -6,8 +6,6 @@ description:
 image: /assets/images/placeholder-12.jpg
 author: Muhammad Dhia Ul Haq
 tags: 
-  - Dummy Text
-  - Moon Drinking
-  - Kale
+  - Joke
 ---
 Pada tahun 1867 ada dua anak kecil pergi ke dermaga dan disana mereka melihat banyak air.

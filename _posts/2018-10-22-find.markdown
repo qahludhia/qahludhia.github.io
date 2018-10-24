@@ -5,6 +5,8 @@ date: 2018-10-22
 description: 
 image: /assets/images/linux.jpg
 author: Muhammad Dhia Ul Haq
+tags:
+ - Tech
 ---
 Pada postingan kali ini saya akan membahas tentang command **find** di Linux
 

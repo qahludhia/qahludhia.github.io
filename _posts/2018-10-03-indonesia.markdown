@@ -6,9 +6,7 @@ description:
 image: /assets/images/palu.jpg
 author: Muhammad Dhia Ul Haq
 tags: 
-  - Dummy Text
-  - Moon Drinking
-  - Kale
+  - Mind
 ---
 Belum usai duka Lombok, kini duka kita bertambah. Ya, duka Palu. 
 

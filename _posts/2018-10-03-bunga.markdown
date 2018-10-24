@@ -5,5 +5,7 @@ date: 2018-10-03
 description: 
 image: /assets/images/placeholder-4.jpg
 author: Muhammad Dhia Ul Haq
+tags:
+    - Mind
 ---
 Bunga tidak perlu menyatakan bahwa dirinya indah.

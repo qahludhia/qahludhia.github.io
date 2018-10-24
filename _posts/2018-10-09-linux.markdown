@@ -5,6 +5,8 @@ date: 2018-10-09
 description: 
 image: /assets/images/linux.png
 author: Muhammad Dhia Ul Haq
+tags:
+ - Tech
 ---
 Apakah anda familiar dengan gambar diatas? Mungkin bagi sebagian orang tidak tau apa maksud dari penguin imut yang satu ini. Ya, itu adalah Linux. Salah satu Operation System yang terkenal dikalangan para "Programmer".
 

@@ -6,8 +6,6 @@ description:
 image: /assets/images/placeholder-5.jpg
 author: Muhammad Dhia Ul Haq
 tags: 
-  - Squid
-  - Moon Drinking
-  - Kale
+  - Joke
 ---
 Macan adalah hewan karnivora yang memakan daging.

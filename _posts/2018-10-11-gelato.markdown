@@ -5,6 +5,8 @@ date: 2018-10-11
 description: 
 image: /assets/images/eskrim.jpeg
 author: Muhammad Dhia Ul Haq
+tags:
+ - Food
 ---
 Gelato memiliki tekstur yang lebih halus dibanding es krim. Bahan dasar yang digunakan sama dengan es krim. Namun pembuatan gelato perlu menambahkan soft mix dan soft ice. Ini adalah bahan konsentrat dan pelembut yang aman dikonsumsi. Berbeda dengan es krim, gelato butuh suhu lebih dingin yakni -20 sampai -25 derajat Celcius. Kreasi rasa untuk gelato juga dapat lebih beragam, dan rasa akan lebih kuat dari es krim. Nata menyebutkan saat gelato disebut es krim juga tidak salah, karena dalam bahasa Italia gelato berarti es krim. 
 

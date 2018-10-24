@@ -5,6 +5,8 @@ date: 2018-10-10
 description: 
 image: /assets/images/html.png
 author: Muhammad Dhia Ul Haq
+tags:
+ - Tech
 ---
 Mungkin HTML & CSS itu hal yang sulit untuk dipisahkan dalam membuat website. Ibarat manusia, HTML itu seperti badan kita, dan CSS itu sebagai pakaian yang kita pakai. Masih kurang paham? Mari kita lihat website [https://detik.com] jika tidak menggunakan CSS.
 

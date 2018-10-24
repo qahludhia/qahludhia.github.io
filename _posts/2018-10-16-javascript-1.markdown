@@ -5,6 +5,8 @@ date: 2018-10-16
 description: 
 image: /assets/images/nyoba.gif
 author: Muhammad Dhia Ul Haq
+tags:
+ - Tags
 ---
 ## Pengertian JavaScript
 

@@ -5,6 +5,8 @@ date: 2018-10-09
 description: 
 image: /assets/images/richard.jpg
 author: Muhammad Dhia Ul Haq
+tags:
+  - Tech
 ---
 Mungkin bagi sebagian orang tidak tau siapa beliau. Beliau adalah Richard Stallman. Salah satu pendiri gerakan "Free Software Foundation".
 

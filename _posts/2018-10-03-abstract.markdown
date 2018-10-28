@@ -6,9 +6,7 @@ description:
 image: /assets/images/abstrak.png
 author: Muhammad Dhia Ul Haq
 tags: 
-  - Dummy Text
-  - Moon Drinking
-  - Kale
+  - Mind
 ---
 ## DEFINISI ABSTRAK
 

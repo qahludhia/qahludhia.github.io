@@ -35,7 +35,9 @@ sort -r (file.txt)
 
 Kamu juga bisa melakukan hal lain dengan command sort ini, kamu hanya perlu melihatnya di manpage sort dengan cara seperti dibawah ini:
 
-```console
+```console```console
+sort (file.txt) 
+```
 man sort
 ```
 

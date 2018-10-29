@@ -1,0 +1,76 @@
+---
+layout: post
+title: "Linux #4: Moving file with ssh "
+date: 2018-10-29
+description: 
+image: /assets/images/linux.jpg
+author: Muhammad Dhia Ul Haq
+tags:
+ - Tech
+---
+Pada postingan kali ini, saya akan menjelaskan tentang bagaimana caranya memindahkan file dengan mudah, tidak perlu menggunakan hardware, yang kita butuhkan hanyalah OS Linux, terminal dan ssh.
+
+### Yang Pertama
+
+Pastikan kita sudah menginstall ssh di Linux kita, kalo belum install, ikuti langkah dibawah ini.
+
+Ketik di terminal anda seperti ini:
+
+
+```console
+sudo apt-get install ssh 
+```
+SSH sudah terinstall.
+
+### Yang Kedua
+
+Pastikan file atau folder yang kita ingin kirim owner-nya user kita, bukan root. Jika belum makan ubahlah seperti ini
+
+Sebelum:
+![Placeholder](/assets/images/ssh2.png)
+
+Kita ketikkan seperti ini:
+```console
+sudo chown -R dhia:dhia BelajarLinux
+ ```
+
+Sesudah:
+![Placeholder](/assets/images/ssh1.png)
+
+### Yang Ketiga
+
+Persiapannya sudah, sekarang kita tinggal memindahkannya ke Laptop temen kita misalnya. Ada 2 cara, yang pertama hanya memindahkan file saja, tidak merubah owner dari folder tersebut, yang kedua itu secara keseluruhan, jadi owner-nya pun sama dengan yang ada dikita, sama bukan berarti nama owner kita, tetapi kedudukan owner dari file tersebut.
+
+###### Cara yang pertama
+
+Yang pertama adalah menggunakan **scp**
+
+```console
+ ✘ dhia@Puco-pc  /opt/myapi  sudo scp * mee@192.168.100.31:/opt/myap    
+ ```
+
+Disini saya akan memindahkan file saya yang berada di /opt/myapi ke laptop teman saya dengan folder yang sama, tapi mungkin owner dari folder yang kita pindah akan beda.
+
+![Placeholder](/assets/images/ssh4.png)
+
+Sebelum:
+![Placeholder](/assets/images/ssh3.png)
+
+Sesudah:
+![Placeholder](/assets/images/ssh5.png)
+
+
+##### Cara yang kedua
+
+Yang kedua adalah menggunakan **rsync**
+
+```console
+ ✘ dhia@Puco-pc  /opt/myapi  sudo scp * mee@192.168.100.31:/opt/myap    
+ ```
+
+Bedanya dengan scp hanya owner filenya saja, jadi kalo rsync ini kedudukan owner filenya sama dengan yang kita punya.
+
+## Terima Kasih
+Mungkin itu yang dapat saya tulis kali ini, sebagaimana biasanya, kritik & saran sangat diperlukan dalam tulisan saya agar menjadi lebih baik lagi kedepannya. Jadi, kalian bisa hubungi saya lewat Twitter ataupun Instagram yang tertera dibagian paling bawah web saya. 
+
+Terima Kasih. 

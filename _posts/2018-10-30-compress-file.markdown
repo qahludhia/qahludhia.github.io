@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Linux #5: Compressing file with tar & gzip"
-date: 2018-30
+date: 2018-10-30
 description: 
 image: /assets/images/linux.jpg
 author: Muhammad Dhia Ul Haq

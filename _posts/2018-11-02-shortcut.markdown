@@ -1,0 +1,45 @@
+---
+layout: post
+title: "Linux #7: Create and Manage Hard and Soft Links"
+date: 2018-11-02
+description: 
+image: /assets/images/linux.jpg
+author: Muhammad Dhia Ul Haq
+tags:
+ - Tech
+---
+
+Pada postingan kali ini saya akan membahas tentang link di Linux atau gampangnya seperti shortcut di Windows. Link terbagi menjadi dua, ada hardlink dan softlink. Apa perbedaannya? Mari kita liat.
+
+##### Yang Pertama
+
+Yang pertama adalah hardlink.
+
+```console
+Ln ../pico.txt (nama) shortcut.txt 
+```
+
+Maksud dari command diatas adalah, saya ingin membuat hardlink dari file pico.txt saya yang berada difolder sebelum folder saya berada ini, jadi saya hanya perlu mengetikkan seperti diatas, menurut saya hardlink ini seperti copy, kenapa? Karena kalo kita edit file name hardlink-nya maupun yang aslinya, dia bakal tetep bisa dibuka. Oiya, maksud dari **ln** adalah link.
+
+##### Yang Kedua
+
+Yang kedua adalah softlink
+
+```console
+Ln -s ln -s ../pico2.txt
+```
+
+Maksud dari command diatas adalah, saya ingin membuat softlink dari file pico2.txt saya yang berada difolder sebelum folder saya berada ini, jadi saya hanya perlu mengetikkan seperti diatas. Nah, kalau softlink ini bakal beda sama hardlink, liat gambar dibawah ini,
+
+![Placeholder](/assets/images/softlink2.png)
+
+Bedanya dengan hardlink, kalo hardlink ya kaya file biasa aja, gaada apa-apanya, kalo soflink kan keliatan jadinya dia itu shortcut darimana.
+Eit, tapi kalo softlink ini kita gabisa ubah namefile asli kita, karena bakal jadi error seperti ini:
+
+
+![Placeholder](/assets/images/softlink.png)
+
+## Terima Kasih
+Mungkin itu yang dapat saya tulis kali ini, sebagaimana biasanya, kritik & saran sangat diperlukan dalam tulisan saya agar menjadi lebih baik lagi kedepannya. Jadi, kalian bisa hubungi saya lewat Twitter ataupun Instagram yang tertera dibagian paling bawah web saya. 
+
+Terima Kasih. 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Linux #8: Create, Delete, and Modify Local User Accounts, Modify Local Groups and Group Memberships"
-date: 2018-11-02
+date: 2018-11-04
 description: 
 image: /assets/images/linux.jpg
 author: Muhammad Dhia Ul Haq

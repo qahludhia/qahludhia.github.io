@@ -1,0 +1,64 @@
+---
+layout: post
+title: "Linux #9: Iptables"
+date: 2018-11-05
+description: 
+image: /assets/images/linux.jpg
+author: Muhammad Dhia Ul Haq
+tags:
+ - Tech
+---
+
+Pada postingan kali ini, saya akan membahas tentang iptables. 
+
+Iptables adalah suatu tools dalam sistem operasi linux yang berfungsi sebagai alat untuk melakukan filter (penyaringan) terhadap (trafic) lalulintas data. Secara sederhana digambarkan sebagai pengatur lalulintas data. Dengan iptables inilah kita akan mengatur semua lalulintas dalam komputer kita, baik yang masuk ke komputer, keluar dari komputer, ataupun traffic yang sekedar melewati komputer kita. *source:
+[http://dhetkj.blogspot.com/2011/06/pengertian-iptables.html?m=1](http://dhetkj.blogspot.com/2011/06/pengertian-iptables.html?m=1)*
+
+Langsung aja kita ke prakteknya
+
+##### Yang Pertama
+
+```console
+iptables -A INPUT -p icmp --in-interface wlp3s0 -j REJECT atau DROP
+```
+
+Yang pertama adalah memblok seluruh IP orang agar tidak bisa ping IP kita. Nah, disitu kan saya memberi pilihan ada REJECT atau DROP. Perbedaannya adalah, kalau kita pakai yang REJECT, maka orang yang ingin ping IP kita bakal tau IP dia di reject, sedangkan yang DROP itu tidak terjadi apa-apa.
+
+##### Yang Kedua
+
+```console
+iptables -A INPUT -i wlp3s0 -s 192.168.100.81 -j REJECT atau DROP
+```
+
+Yang kedua sama seperti diatas, tapi bedanya kita hanya memblokir IP tertentu, atau IP mana yang kita ingin blok.
+
+##### Yang Ketiga
+
+```console
+sudo iptables -A INPUT 	-i wlp3s0 -p tcp -s 192.168.100.31/24 --dport 22 -j REJECT atau DROP
+```
+
+Yang ketiga ini, kita memblokir semua ip dan port orang agar tidak bisa masuk ke komputer kita menggunakan SSH atau telnet. Ini bisa digunakan untuk mencegah terjadinya peretasan di system kita kelak.
+##### Yang Keempat
+
+```console
+sudo iptables -A INPUT -i wlp3s0 -p tcp -s 192.168.100.22 --dport 22 -j REJECT
+```
+
+Yang keempat ini hampir sama dengan yang diatas, cuma bedanya, kalo yang keempat ini kita memblokir hanya IP tertentu, jadi gasemua IP kita blok. Ini bisa digunakan untuk temen kita yang kadang suka iseng masuk menggunakan SSH.
+
+##### Bonus
+
+Di bonus kali ini, saya akan menjelaskan kepanjangan dari parameter-parameter yang berada diatas.
+
+-A      = Add
+-i      = Interfaces(ethernet card)
+-p      = Protokol
+-s      = Source
+--dport = Destination port
+-j      = Jump (target)
+
+## Terima Kasih
+Mungkin itu yang dapat saya tulis kali ini, sebagaimana biasanya, kritik & saran sangat diperlukan dalam tulisan saya agar menjadi lebih baik lagi kedepannya. Jadi, kalian bisa hubungi saya lewat Twitter ataupun Instagram yang tertera dibagian paling bawah web saya. 
+
+Terima Kasih. 

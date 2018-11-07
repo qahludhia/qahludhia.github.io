@@ -58,6 +58,17 @@ Di bonus kali ini, saya akan menjelaskan kepanjangan dari parameter-parameter ya
 --dport = Destination port
 -j      = Jump (target)
 
+Oiya, untuk melihat list iptables, kita hanya perlu mengetikkan command :
+ ```console
+iptables -L
+```
+dan untuk meresetnya, kita hanya perlu mengetikkan
+
+```console
+iptables -F
+```
+dan semua setting yang tadi kita buat akan kereset seperti semula
+
 ## Terima Kasih
 Mungkin itu yang dapat saya tulis kali ini, sebagaimana biasanya, kritik & saran sangat diperlukan dalam tulisan saya agar menjadi lebih baik lagi kedepannya. Jadi, kalian bisa hubungi saya lewat Twitter ataupun Instagram yang tertera dibagian paling bawah web saya. 
 

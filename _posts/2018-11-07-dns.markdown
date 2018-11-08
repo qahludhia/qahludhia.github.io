@@ -1,0 +1,237 @@
+---
+layout: post
+title: "Linux #10: Create local DNS for our Domain"
+date: 2018-11-05
+description: 
+image: /assets/images/linux.jpg
+author: Muhammad Dhia Ul Haq
+tags:
+ - Tech
+---
+
+Pada postingan kali ini, saya akan menjelaskan tentang bagaimana caranya membuat DNS server lokal. 
+
+Sebelum lanjut, apa itu DNS? DNS adalah kependekan dari Domain Name System, gunanya untuk menerjemahkan IP yang kita punya kedalam domain yang kita punya. Coba kalo gaada DNS, kita harus menghapal website dengan nomor IP-nya bukan dengan nama domain-nya. 
+
+Langsung saja kita liat bagaimana cara buatnya.
+
+##### Yang Pertama
+
+Yang pertama adalah, anda harus menginstall bind terlebih dahulu, caranya anda hanya perlu mengetikkan command di terminal anda masing-masing.
+
+```console
+sudo apt-get install bind9 bind9utils bind9-doc
+```
+##### Yang Kedua
+
+Yang kedua adalah, kita ubah versi IPnya menjadi versi IPv4 dengan cara 
+
+```console
+sudo nano /etc/default/bind9
+```
+Dan samakan dengan yang ada digambar dibawah ini:
+
+![Placeholder](/assets/images/dns.png)
+
+-4 disitu maksudnya kita ngubah jadi IPv4.
+
+##### Yang Kedua
+
+Setelah diganti, jangan lupa untuk merestart bind9-nya dengan mengetikkan
+
+```console
+sudo systemctl restart bind9
+```
+
+##### Yang Ketiga
+
+Yang ketiga, kita buat list ip yang bisa akses DNS server kita, caranya, edit file di
+
+```console
+sudo nano /etc/bind/named.conf.options
+```
+dan tambahkan tulisan dibawah ini keatas option, dan ganti ip yang ada disitu dengan ip local mu.
+
+```console
+acl "trusted" {
+        10.128.10.11;    # ns1 - can be set to localhost
+        10.128.20.12;    # ns2
+        10.128.100.101;  # host1
+        10.128.200.102;  # host2
+};
+```
+Seperti ini:
+
+![Placeholder](/assets/images/dns.png)
+
+Selainnya samakan dengan yang ada digambar.
+
+##### Yang Keempat
+
+Yang keempat mnyeting local file.
+
+```console
+sudo nano /etc/bind/named.conf.local
+```
+dan buat isinya seperti yang ada digambar
+
+![Placeholder](/assets/images/dns3.png)
+
+```console
+zone "nyc3.dhiaulhaq.com" {
+    type master;
+    file "/etc/bind/zones/db.nyc3.dhiaulhaq.com"; # zone file path
+    allow-transfer { 192.168.100.20; };           # ns2 private IP address - secondary
+};
+
+zone "128.10.in-addr.arpa" {
+    type master;
+    file "/etc/bind/zones/db.10.128";  # 10.128.0.0/16 subnet
+    allow-transfer { 10.128.20.12; };  # ns2 private IP address - secondary
+};
+```
+Isi yang ada didalam *allow-transfer* dengan nomor IP kamu masing-masing.
+
+##### Yang Kelima
+
+Yang kelima, kita membuat forward zone, yakni dengan cara mengetikkan command seperti dibawah
+
+```console
+sudo mkdir /etc/bind/zones
+```
+dan copy template yang telah disediakan oleh system bind9 dengan cara:
+
+```console
+sudo cp /etc/bind/db.local /etc/bind/zones/db.nyc3.dhiaulhaq.com
+```
+dan ganti *example* disitu dengan nameserver yang kalian inginkan. Karena nameserver yang saya buat adalah dhiaulhaq.com, maka saya buat seperti itu.
+
+Setelah kita itu edit yang ada didalamnya dengan cara:
+
+```console
+sudo nano /etc/bind/zones/db.nyc3.dhiaulhaq.com
+```
+
+dan isi seperti dibawah ini. Tapi jangan sama plek, sesuaikan dengan IP dan nameserver yang kawan-kawan telah buat.
+
+```console
+$TTL    604800
+@       IN      SOA     ns1.nyc3.dhiaulhaq.com.  admin.nyc3.dhiaulhaq.com. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+
+
+;   name servers - NS records
+    IN      NS      ns1.dhiaulhaq.com.
+    IN      NS      ns2.dhiaulhaq.com.
+
+; name servers - A records
+
+ns1.nyc3.dhiaulhaq.com.      IN        A       192.168.100.20
+ns2.nyc3.dhiaulhaq.com.      IN        A       192.168.100.20
+
+; 10.128.0.0/16 - A records
+
+host1.nyc3.dhiaulhaq.com.    IN        A      192.168.100.20
+host2.nyc3.dhiaulhaq.com.    IN        A      192.168.100.20
+```
+![Placeholder](/assets/images/dns4.png)
+![Placeholder](/assets/images/dns5.png)
+
+##### Yang Keenanm
+
+Yang Keenam, kita membuat reverse zone. caranya hampir sama seperti kita membuat forward zone.
+
+```console
+sudo cp /etc/bind/db.127 /etc/bind/zones/db.168.192
+```
+Sesuaikan nama dbnya dengan dengan IP kalian masing-masing tapi dibalik. Misalnya kalian punya IP 10.20. Maka nama dbnya harus db.20.10. Sesudah itu, kita edit daleman file nya.
+
+```console
+sudo nano /etc/bind/zones/db.168.192
+```
+Dan isi didalamnya seperti punya saya. Bedanya, kalian masukkan IP dan nameserver kalian masing-masing disana.
+
+```console
+$TTL    604800
+@       IN      SOA     nyc3.dhiaulhaq.com. admin.nyc3.dhiaulhaq.com. (
+                              3         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+; name servers - NS records
+      IN      NS      ns1.nyc3.dhiaulhaq.com.
+      IN      NS      ns2.nyc3.dhiaulhaq.com.
+
+
+; PTR Records
+11.10   IN      PTR     ns1.nyc3.dhiaulhaq.com.    ; 192.168.100.20
+12.20   IN      PTR     ns2.nyc3.dhiaulhaq.com.    ; 192.168.100.20
+101.100 IN      PTR     host1.nyc3.dhiaulhaq.com.  ; 192.168.100.20
+102.200 IN      PTR     host2.nyc3.dhiaulhaq.com.  ; 192.168.100.20
+```
+![Placeholder](/assets/images/dns6.png)
+
+##### Yang Ketujuh
+
+Kita mulai memasuki tahap akhir. Selanjutnya kita cek name config kita apakah benar atau tidak. Caranya, ketikkan command dibawah ini
+
+```console
+sudo named-checkconf
+```
+Jika tidak terjadi apa-apa berarti tidak ada yang salah dengan file anda.
+
+Sesudah itu, sekarang kita check forward zone kita, dengan cara mengetikkan command dibawah ini dan sesuaikan dengan nameserver atau file db yang telah kalian buat tadi.
+
+```console
+sudo named-checkzone nyc3.dhiaulhaq.com db.nyc3.dhiaulhaq.com
+```
+Jangan lupa untuk menyesuaikan dengan nameserver anda. Jika berhasil, maka akan keluar output seperti ini:
+
+![Placeholder](/assets/images/dns7.png)
+
+Kalo sudah berhasil, kita cek forward zone kita, dengan cara:
+
+```console
+sudo named-checkzone 192.168.in-addr.arpa /etc/bind/zones/db.168.192
+```
+Jangan lupa untuk menyesuaikan dengan yang anda punya. Jika berhasil, maka akan keluar output seperti ini:
+
+![Placeholder](/assets/images/dns8.png)
+
+##### Yang Kedelapan
+
+Langkah sebelum terakhir adalah, kita merestar bind punya kita dengan cara:
+
+```console
+sudo systemctl restart bind9
+```
+
+##### Yang Kesembilan
+
+Yang terakhir adalah memasukkan IP kita ke:
+
+```console
+sudo nano /etc/resolv.conf
+```
+![Placeholder](/assets/images/dns9.png)
+
+Isi dipaling bawah dengan format seperti digambar, isi dengan IP kalian masing-masing.
+
+Dan kita tes ping seperti ini
+
+```console
+ping nyc3.dhiaulhaq.com
+```
+Sesuaikan dengan nameserver yang telah kalian buat. Jika berhasil maka akan keluar seperti ini
+
+![Placeholder](/assets/images/dns10.png)
+
+## Terima Kasih
+Mungkin itu yang dapat saya tulis kali ini, sebagaimana biasanya, kritik & saran sangat diperlukan dalam tulisan saya agar menjadi lebih baik lagi kedepannya. Jadi, kalian bisa hubungi saya lewat Twitter ataupun Instagram yang tertera dibagian paling bawah web saya. 
+
+Terima Kasih. 

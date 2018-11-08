@@ -62,7 +62,7 @@ acl "trusted" {
 ```
 Seperti ini:
 
-![Placeholder](/assets/images/dns.png)
+![Placeholder](/assets/images/dns2.png)
 
 Selainnya samakan dengan yang ada digambar.
 

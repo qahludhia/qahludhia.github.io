@@ -1,5 +1,5 @@
-# Site/SEO settings
-email: okay@samesies.io
+# Site/ settings
+email: qaludhia@gmail.com
 baseurl: ""
 paginate: 12
 paginate_path: "/page/:num"
@@ -23,7 +23,7 @@ social:
 
 # Contact settings
 contact_img: /assets/images/placeholder-28.jpg
-formcarry: https://formcarry.com/s/HkIo0nMb7
+formcarry: https://formcarry.com/s/joYhpXPhhTv
 
 # Disqus settings
 disqus: test-apkdzgmqhj

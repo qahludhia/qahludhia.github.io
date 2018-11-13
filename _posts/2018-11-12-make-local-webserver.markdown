@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Linux #10: Make local webserver on Ubuntu with Apache2"
+title: "Linux #11: Make local webserver on Ubuntu with Apache2"
 date: 2018-11-11
 description: 
 image: /assets/images/linux.jpg

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Linux #10: Create local DNS for our Domain"
-date: 2018-11-05
+date: 2018-11-07
 description: 
 image: /assets/images/linux.jpg
 author: Muhammad Dhia Ul Haq

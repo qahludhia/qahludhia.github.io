@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Linux #10: Make local webserver on Ubuntu with Apache2"
-date: 2018-11-12
+date: 2018-11-11
 description: 
 image: /assets/images/linux.jpg
 author: Muhammad Dhia Ul Haq

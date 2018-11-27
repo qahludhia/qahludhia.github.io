@@ -58,6 +58,12 @@ Maka akan keluar output seperti dibawah
 
 ![Placeholder](/assets/images/apache3.png)
 
+Dan jika kalian ingin mengedit atau merubah isinya, foldernya terletak di
+
+```console
+/var/www/html   
+``` 
+
 
 ## Terima Kasih
 Mungkin itu yang dapat saya tulis kali ini, sebagaimana biasanya, kritik & saran sangat diperlukan dalam tulisan saya agar menjadi lebih baik lagi kedepannya. Jadi, kalian bisa hubungi saya lewat Twitter, Instagram yang tertera dibagian paling bawah web saya, atau di menu kritik & saran yang berada dipojok kanan atas web saya. 

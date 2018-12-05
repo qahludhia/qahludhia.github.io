@@ -1,0 +1,125 @@
+---
+layout: post
+title: "Linux #13: Docker"
+date: 2018-12-04
+description:  
+image: /assets/images/docker.png
+author: Muhammad Dhia Ul Haq
+tags:
+ - Tech
+---
+Hello gengs! Kali ini saya akan menjelaskan bagaimana caranya menginstall docker di ubuntu. 
+
+Sebelumnya, apa si itu docker? 
+
+Docker adalah salah satu platform yang dibangun berdasarkan teknologi container. Docker merupakan sebuah project open-source yang menyediakan platform terbuka untuk developer maupun sysadmin untuk dapat membangun, mengemas, dan menjalankan aplikasi dimanapun sebagai sebuah wadah (container) yang ringan. Dengan sangat populernya docker, sebagian orang sering menganggap docker adalah sebutan lain untuk container.
+(**Source**: https://www.codepolitan.com/mengenal-teknologi-docker).
+
+Mudahnya si begini,
+
+![Placeholder](/assets/images/docker1.png)
+
+Mengerti maksud gambar diatas? Jadi, dalam satu kapal itu kan bisa menampung banyak kontainer didalamnya, konsepnya sama seperti lambang docker. Jadi, docker itu bisa menampung banyak aplikasi, OS, dan semacamnya.
+
+Langsung saja, saya akan memberitahu bagaimana cara menginstallnya, ikuti langkah-langkah dibawah
+
+##### Yang Pertama
+
+Yang pertama kita update package dulu.
+
+```console
+sudo apt update
+```
+Setelah itu, install beberapa package yang dibutuhkan
+
+```console
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+```
+Abis tu, tambahin GPG key
+
+```console
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+Setelah itu, tambahain Repository docker ke APT source
+
+```console
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+```
+Abis itu di update untuk update package atau repo yang sudah kita tambahin agar kebaca
+
+```console
+sudo apt update
+```
+Pastikan kita menginstall docker dari repository docker, bukan dari repository punya ubuntu
+
+```console
+apt-cache policy docker-ce
+```
+Dan akan keluar output seperti dibawah ini:
+```console
+docker-ce:
+  Installed: (none)
+  Candidate: 18.03.1~ce~3-0~ubuntu
+  Version table:
+     18.03.1~ce~3-0~ubuntu 500
+        500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+```        
+
+Yang terakhir install docker-nya
+
+```console
+sudo apt install docker-ce
+```
+
+Setelah di install, pastikan bila memang sudah terinstall dengan cara:
+
+```console
+systemctl status docker
+```
+atau kalo gabisa pake systemctl, pake ini:
+
+```console
+/etc/init.d/docker status
+```
+
+##### Yang Kedua
+
+Jika kita sudah terinstall, sudah beres semua, kita tinggal berbuat sesuka hati kita.
+
+Nah, kita pertama coba download image dulu(image itu sama halnya dengan .iso), caranya, ketikkan seperti dibawah ini:
+
+```console
+sudo docker pull ubuntu
+```
+Karena saya ingin menginstall ubuntu, maka yang saya pull adalah ubuntu. Jika kalian mau yang lain, coba kalian cari di Google apa image yang tersedia di docker.
+
+Setelah itu, jalankan dengan cara begini:
+
+```console
+sudo docker run -i -t centos /bin/bash
+```
+sebelum run docker:
+![Placeholder](/assets/images/docker2.png)
+
+sesudah run docker:
+![Placeholder](/assets/images/docker3.png)
+
+Nah, jika kita udah masuk, abis itu kita exit dari docker, kita bisa liat prosesnya dengan cara:
+
+```console
+sudo docker ps
+```
+![Placeholder](/assets/images/docker4.png)
+
+Nah, ada yang mirip dengan docker ps, namanya docker images. Jadi kalo di docker images itu kita bisa liat ID dari images yang kita punya, dan ini nanti sangat dipake. ketikkan
+
+```console
+sudo docker images
+```
+
+![Placeholder](/assets/images/docker5.png)
+
+## Terima Kasih
+Mungkin itu yang dapat saya tulis kali ini, sebagaimana biasanya, kritik & saran sangat diperlukan dalam tulisan saya agar menjadi lebih baik lagi kedepannya. Jadi, kalian bisa hubungi saya lewat Twitter, Instagram yang tertera dibagian paling bawah web saya, atau di menu kritik & saran yang berada dipojok kanan atas web saya. 
+
+Terima Kasih. 

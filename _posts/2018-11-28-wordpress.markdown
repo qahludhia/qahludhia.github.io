@@ -41,7 +41,19 @@ Pertama, kalian akan diminta untuk install 'validate_password' plugin, jadi penc
 Selanjutnya kita harus menginstall PHP dan modules agar bekerja dengan web dan databasenya. Cara installnya seperti ini
 
 ```console
-sudo apt-get install php7.0 php7.0-mysql libapache2-mod-php7.0 php7.0-cli php7.0-cgi php7.0-gd  
+apt-get install software-properties-common 
+```
+setelah itu
+```console
+add-apt-repository ppa:ondrej/php
+```
+
+```console
+apt-get update
+```
+
+```console
+apt-get install php7.2
 ```
 
 Dan untuk mengetes apakah php-nya sudah bekerja dengan webserver, kita coba membuat file bernama *info.php* didalam folder /var/www/html

@@ -13,7 +13,7 @@ Hello gengs! Kali ini saya akan menjelaskan bagaimana caranya menginstall docker
 Sebelumnya, apa si itu docker? 
 
 Docker adalah salah satu platform yang dibangun berdasarkan teknologi container. Docker merupakan sebuah project open-source yang menyediakan platform terbuka untuk developer maupun sysadmin untuk dapat membangun, mengemas, dan menjalankan aplikasi dimanapun sebagai sebuah wadah (container) yang ringan. Dengan sangat populernya docker, sebagian orang sering menganggap docker adalah sebutan lain untuk container.
-(**Source**: https://www.codepolitan.com/mengenal-teknologi-docker).
+[Source](https://www.codepolitan.com/mengenal-teknologi-docker).
 
 Mudahnya si begini,
 

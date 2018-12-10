@@ -1,0 +1,84 @@
+---
+layout: post
+title: "Linux #14: KVM(QEMU)"
+date: 2018-12-10
+description:  
+image: /assets/images/kvm.png
+author: Muhammad Dhia Ul Haq
+tags:
+ - Tech
+---
+Hello gan, sis. Hari ini saya akan menjelaskan apa itu KVM dan bagaimana cara installnya.
+
+##### Apa itu KVM
+
+Apa itu KVM? KVM(Kernel Virtual Machine) adalah solusi virtualisasi penuh untuk Linux pada hardware x86 mengandung ekstensi virtualisasi (Intel VT atau AMD-V). Ini terdiri dari modul kernel loadable, kvm.ko, yang menyediakan infrastruktur inti dan modul virtualisasi prosesor tertentu, KVM-intel.ko atau KVM-amd.ko. KVM QEMU juga membutuhkan dimodifikasi meskipun pekerjaan sedang berlangsung untuk mendapatkan perubahan yang diperlukan. [Source](https://nopainsocounterpain.wordpress.com/2011/09/28/berkenalan-tentang-xen-qemu-dan-kvm-virtual-machine/)
+
+Gampangnya si, sama kayak virtualbox cuman lebih enteng aja. Yaudah, langsung aja ke cara instalasinya.
+
+##### Yang Pertama
+
+Yang pertama seperti biasa, update cache dulu
+
+```console
+sudo apt-get update
+```
+
+**Lalu**
+
+```console
+sudo apt-get install -y qemu-kvm qemu virt-manager virt-viewer libvirt-bin
+```
+* qemu-kvm = Kernel-based Virtual machine, QEMU uses it for CPU virtualization.
+* qemu = CPU emulator.s
+* virt-viewer = untuk GUInya
+
+##### Yang Kedua
+
+Install KVM, dan virt manager
+
+```console
+sudo virt-install  --name=nama  --ram=1024  --vcpus=1  --cdrom=/var/lib/libvirt/images/CentOS-6.9-x86_64-minimal.iso --os-type=linux   --disk path=/var/lib/libvirt/images/itzgeekguest.dsk,size=4
+```
+–name – Nama Virtual machine sesukamu
+
+–ram – Jumlah RAM dalam bentuk MB (sesuaikan dengan RAM milikmu, kalo punyamu 4GB jangan buat lebih dari itu, gabakal bisa. Soalnya dia ambil dari RAM aslimu)
+
+–vcpus – Berapa CPU (Sama seperti RAM, kalo CPU mu cuman dual-core, jangan buat quad-core)
+
+–cdrom – Lokasi ISO OS yang pengen di Install
+
+–os-type – Tipe OS eperti: Linux, Windows, dan Unix
+
+–os-variant – OS variant like RHEL 6 (Kalo saya dikosongin, soalnya gatau maksudnya :D)
+
+–network – Networking (Ini juga saya kosongin, jadi dia nanti settingnya default)
+
+–graphics – Guest display settings (Saya juga kosongin)
+
+–disk path – Lokasi tempat kita mau buat, minimal 4 GB
+
+
+![Placeholder](/assets/images/qemu.png)
+
+Nah, nanti bakal keluar popup kayak begini:
+
+![Placeholder](/assets/images/qemu1.png) (Wkwk, saya screenshot waktunya kurang pas, jadi blank begini.)
+
+Sebagai gantinya, saya ambil dari tempat saya liat tutorialnya:
+
+![Placeholder](/assets/images/qemu2.png)
+
+Nah, kalo udah install kita tinggal buka virt-manager biar mudah. Virt-manager itu GUInya, jadi kita tinggal setting-setting disitu supaya lebih gampang
+
+[Source](https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/install-kvm-qemu-on-ubuntu-14-10.html) 
+
+## Terima Kasih
+Mungkin itu yang dapat saya tulis kali ini, sebagaimana biasanya, kritik & saran sangat diperlukan dalam tulisan saya agar menjadi lebih baik lagi kedepannya. Jadi, kalian bisa hubungi saya lewat Twitter, Instagram yang tertera dibagian paling bawah web saya, atau di menu kritik & saran yang berada dipojok kanan atas web saya. 
+
+Terima Kasih. 
+
+# Jangan lupa untuk subscribe PewDiePie
+
+[Subscribe](https://www.youtube.com/user/PewDiePie)
+

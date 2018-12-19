@@ -36,6 +36,9 @@ Karena device saya namanya **sdb** maka hasilnya seperti ini
 
 dan kalau kalian ingin melihat panduannya, kalian ketikkan huruf "m". Maka akan keluar seperti ini
 
+![Placeholder](/assets/images/partisi6.png)
+![Placeholder](/assets/images/partisi7.png)
+
 ##### Yang Ketiga
 
 Nah, sekarang kita akan mencoba membagi partisi **sdb** tadi, menjadi beberapa bagian lagi

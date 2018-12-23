@@ -1,0 +1,128 @@
+---
+layout: post
+title: "Linux #16: Logical Volume Manager (LVM)"
+date: 2018-12-21
+description:  
+image: /assets/images/linux.jpg
+author: Muhammad Dhia Ul Haq
+tags:
+ - Tech
+---
+Pada postingan kali ini, saya akan membahas tentang LVM. Apa itu LVM? LVM adalah kependekan dari Logical Volume Manager. Jelasnya, LVM adalah metode alokasi ruang penyimpanan pada media penyimpanan yang lebih fleksibel dari partisi konvensional. LVM merupakan satu bentuk lain dari penyimpanan virtualisasi.
+
+Secara umum LVM memungkinkan kita untuk menggabungkan atau mengkombinasikan beberapa partisi dan atau disk menjadi satu buah Logical Volume yang lebih besar yang kemudian memungkinkan untuk diubah, digabung dan atau dipindah dalam kondisi sedang digunakan. Artinya tidak diperlukan downtime untuk menambah atau mengurangi kapasitas penyimpanan. Hal ini bermanfaat karena tidak mengganggu proses operasional yang sedang berjalan. Logical Volume Management (LVM) adalah pilihan manajemen disk yang hampir ada pada setiap distro Linux. [Source](https://www.vavai.com/berkenalan-dengan-lvm-p2/).
+
+Langsung aja ke tutorialnya
+
+##### Warning!
+
+Kalau kita ingin melakukannya di laptop kita sendiri, tanpa menggunakan virtual-box atau semacamnya, saya sarankan untuk membackup data yang kalian miliki terlebih dahulu, karen bisajadi kalau salah langkah, akibatnya akan fatal, data-data yang kalian miliki mungkin akan hilang.
+
+##### Yang Pertama
+
+Sama seperti potingan [sebelumnya](https://dhiaulhaq.com/2018/12/18/partitions/), kalau kita belum buat partisi, kita buat dulu, penjelasannya ada di postingan tersebut.
+Jika sudah, kita tinggal mengganti jenis partisinya dari ext2/ext3/ext4 (tergantung punya kalian) ke LVM.
+
+##### Yang Kedua
+
+Kalo kita udah punya partisi yang pengen kita ubah, kita tinggal ubah aja, caranya begini:
+
+```console
+fdisk /dev/sdb(sesuaikan dengan nama device kalian), lalu ikuti yang ada dibawah ini
+
+Command (m for help): t
+Partition number (1,2, default 2): 
+Partition type (type L to list all types): 8e(ini kode lvm)
+
+Changed type of partition 'Linux' to 'Linux LVM'.
+
+Command (m for help): t
+Partition number (1,2, default 2): 1
+Partition type (type L to list all types): 8e
+
+Changed type of partition 'Linux' to 'Linux LVM'.
+
+Command (m for help): w (ini untuk save)
+
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+```
+
+##### Yang Ketiga
+
+Langsung saja kita langsung buat Physical Volume dengan cara
+
+```console
+pvcreate /dev/sdb1 /dev/sdb2
+```
+Sesuaikan degan device yang ingin kalian jadikan LVM, karena saya ingin menjadikan sdb1 & 2, maka saya tulis seperti itu.
+Setelah kita ketik itu, maka akan keluar output seperti ini:
+
+![Placeholder](/assets/images/lvm5.png)
+
+Setelah itu, coba kita ketikkan 
+
+```console
+pvdisplay
+```
+maka akan keluar output seperti ini:
+
+![Placeholder](/assets/images/lvm6.png)
+
+##### Yang Keempat
+
+Selanjutnya kita membuat volume group
+
+```console
+vgcreate tinydata(ini bebas, sesuaikan dengan keinginan kalian mau dinamain apa) /dev/sdb1 /dev/sdb2 (sesuaikan sepeti biasa)
+```
+Maka akan keluar output seperti ini:
+
+![Placeholder](/assets/images/lvm7.png)
+
+##### Yang Kelima
+
+Lalu, kita buat logical volume, disini saya membuat dengan nama **tinydata**. Caranya seperti ini:
+
+```console
+lvcreate --name logical-tiny --size 300M tinydata
+```
+![Placeholder](/assets/images/lvm8.png)
+
+##### Yang Kelima
+
+Tanpa filesystem di logical volume, kita gabisa simpen apapun didalamnya. Maka kita buat, dengan cara seperti ini:
+
+```console
+mkfs -t ext4 /dev/tinydata/logical-tiny
+```
+![Placeholder](/assets/images/lvm10.png)
+
+##### Yang Keenam
+
+Sekarang, saya kan mount logical volumenya. Saya akan mount di /mnt/teeny(namanya bebas), maka kita buat folder dulu didalamnya
+
+```console
+mkdir /mnt/teeny
+
+atau bisa juga, kalian masuk kedalam folder /mnt/ dan mkdir didalamnya.
+```
+Lalu, kita mount dengan cara:
+
+```console
+mount /dev/tinydata/logical-tiny /mnt/teeny/
+```
+Sesuaikan dengan yang kalian buat. 
+
+Lalu jalankan
+
+```console
+df -h
+```
+
+## Terima Kasih
+Mungkin itu yang dapat saya tulis kali ini, sebagaimana biasanya, kritik & saran sangat diperlukan dalam tulisan saya agar menjadi lebih baik lagi kedepannya. Jadi, kalian bisa hubungi saya lewat Twitter, Instagram yang tertera dibagian paling bawah web saya, atau di menu kritik & saran yang berada dipojok kanan atas web saya. 
+
+Terima Kasih.
+

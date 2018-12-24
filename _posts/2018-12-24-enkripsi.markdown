@@ -1,0 +1,77 @@
+---
+layout: post
+title: "Linux #17: Encrypted Partition"
+date: 2018-12-24
+description:  
+image: /assets/images/linux.jpg
+author: Muhammad Dhia Ul Haq
+tags:
+ - Tech
+---
+
+Hello semua, kali ini saya akan menjelaskan tentang bagaimana kita menenkripsi partisi kita agar tidak semua orang bisa membukanya.
+
+Dan perlu diketahui, postingan kali ini, masih ada hubungannya dengan 3 postingan sebelumnya, yaitu mengenai partisi.
+
+Langsung saja kita ke step yang pertama
+
+##### Yang Pertama
+
+Pastikan sebelum memulai, partisi yang kita ingin enkripsi belum termount/tercolok.
+
+Dan disini saya akan menenkripsi paritis sdb1
+
+![Placeholder](/assets/images/enkripsi1.png)
+
+Kalian bisa cek milik kalian dengan cara mengetikkan
+
+```console
+lsblk
+```
+Lalu, setelah memastikan paritisi yang ingin kita enkripsi belum termount, kita ketikkan seperti ini
+
+```console
+cryptsetup luksFormat /dev/sdb1 (karena saya ingin mengenkripsi sdb1)
+```
+
+![Placeholder](/assets/images/enkripsi2.png)
+
+Disitu kita diminta buat password
+
+##### Yang Kedua
+
+Sesudah kita kunci, kita harus punya filesystem didalam partisi sebelum kita mount partisi tersebut. caranya
+
+```console
+mkfs -t ext4 /dev/mapper/apalah (bebas)
+```
+
+##### Yang Ketiga
+
+Baru kita mount disini, caranya, kita buat dulu folder di /mnt/ 
+
+```console
+mkdir bebasnama 
+atau
+mkdir /mnt/bebasnama
+```
+
+Setelah itu, baru kita mount
+
+```console
+mount /dev/mapper/apalah /mnt/apalah
+```
+
+Dan selesai!
+
+Jika kalian ingin mengunci partisi yang sudah di enkripsi, ketikkan command ini
+
+```console
+umount /mnt/nama yang kalian buat
+cryptsetup luksClose nama yang kalian buat
+```
+
+## Terima Kasih
+Mungkin itu yang dapat saya tulis kali ini, sebagaimana biasanya, kritik & saran sangat diperlukan dalam tulisan saya agar menjadi lebih baik lagi kedepannya. Jadi, kalian bisa hubungi saya lewat Twitter, Instagram yang tertera dibagian paling bawah web saya, atau di menu kritik & saran yang berada dipojok kanan atas web saya. 
+
+Terima Kasih.

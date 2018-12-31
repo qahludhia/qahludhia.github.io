@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Linux #20: Swap Space"
+title: "Linux #19: Swap Space"
 date: 2018-12-26
 description: Pada post ini, saya akan menjelaskan bagaimana caranya membuat swap space.
 image: /assets/images/linux.jpg

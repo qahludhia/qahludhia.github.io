@@ -1,0 +1,87 @@
+---
+layout: post
+title: "Linux #21: RAID"
+date: 2019-01-01
+description: Mengenal RAID
+image: /assets/images/linux.jpg
+author: Muhammad Dhia Ul Haq
+tags:
+ - Tech
+---
+Pada postingan kali ini, saya akan memberi tau apa itu RAID, dan bagaimana cara kita mengkonfigurasikannya.
+
+##### Apa itu RAID?
+
+RAID adalah singkatan dari Redundant Array of Independent Disks merujuk kepada sebuah teknologi di dalam penyimpanan data komputer yang digunakan untuk mengimplementasikan fitur toleransi kesalahan pada media penyimpanan komputer (utamanya adalah hard disk) dengan menggunakan cara redundansi (penumpukan) data, baik itu dengan menggunakan perangkat lunak, maupun unit perangkat keras RAID terpisah. Kata "RAID" juga memiliki beberapa singkatan Redundant Array of Inexpensive Disks, Redundant Array of Independent Drives, dan juga Redundant Array of Inexpensive Drives. Teknologi ini membagi atau mereplikasi data ke dalam beberapa hard disk terpisah. RAID didesain untuk meningkatkan keandalan data dan/atau meningkatkan kinerja I/O dari hard disk.[Selengkapnya](https://id.wikipedia.org/wiki/RAID) 
+
+Nah, RAID itu terbagi ke beberapa level
+
+* RAID level pertama: mirroring
+* RAID level kedua : Koreksi kesalahan      dengan menggunakan kode Humming
+* RAID level ketiga : Pengecekan terhadap disk tunggal di dalam sebuah kelompok disk.
+* RAID level keempat: Pembacaan dan penulisan secara independen
+* RAID level kelima : Menyebarkan data dan paritas ke semua drive (tidak ada pengecekan terhadap disk tunggal)
+* RAID level keenam : Pengembangan terhadap RAID level kelima
+
+Langsung saja kita pelajari bagaimana cara mengkonfigurasinya
+
+##### Yang Pertama
+
+Kita harus mempunyai 4 disk/partisi yang type-nya Linux raid auto.
+
+Lalu, kita install mdadm
+```console
+apt-get install mdadm
+```
+
+##### Yang Kedua 
+
+Langsung saja kita buat RAID-nya
+
+```console
+mdadm --create --verbose /dev/md0 --level=5 --raid-devices=4 /dev/sdb /dev/sdc /dev/sdd /dev/sde  
+```
+Comman diatas adalah, saya membuat RAID level 5 dengan jumlah device 4.
+Outputnya akan seperti ini:
+
+![Placeholder](/assets/images/raid1.png)
+![Placeholder](/assets/images/raid2.png)
+
+Lalu, kita cek apakah benar seperti yang ada di command?
+
+```console
+mdadm --detail /dev/md0
+```
+![Placeholder](/assets/images/raid3.png)
+
+Ternyata benar.
+
+Selanjutnya, kita akan membuat spare device (perangkat cadangan), jadi, persiapkan 1 harddisk lagi.
+
+Kita hanya perlu mengetikkan:
+
+```console
+mdadm /dev/md0 --add /dev/sdf
+```
+Masukkan device yang ingin anda tambahkan, diatas hanya sebagai contoh.
+
+Output yang keluar seperti ini:
+
+![Placeholder](/assets/images/raid4.png)
+
+Setelah kita menambahkan spare device, update file mdadm.conf kita, yang berada ada di /etc/mdadm/mdadm.conf 
+
+```console
+ARRAY /dev/md127 metadata=1.2 spares=1 name=dhia:0 UUID=34ff6063:19627450:342d5$
+```
+delete atau uncommand, lalu kita ketikkan
+
+```console
+sudo mdadm --detail --brief /dev/md0 | sudo tee -a /etc/mdadm/mdadm.conf
+```
+
+ ## Terima Kasih
+Mungkin itu yang dapat saya tulis kali ini, sebagaimana biasanya, kritik & saran sangat diperlukan dalam tulisan saya agar menjadi lebih baik lagi kedepannya. Jadi, kalian bisa hubungi saya lewat Twitter, Instagram yang tertera dibagian paling bawah web saya, atau di menu kritik & saran yang berada dipojok kanan atas web saya. 
+
+Terima Kasih.
+

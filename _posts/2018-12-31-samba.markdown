@@ -1,0 +1,192 @@
+---
+layout: post
+title: "Linux #20: Membuat Samba Server"
+date: 2018-12-31
+description: Menjelaskan tentang bagaimana caranya membuat samba server
+image: /assets/images/linux.jpg
+author: Muhammad Dhia Ul Haq
+tags:
+ - Tech
+---
+Hello semua, kali ini saya akan menjelaskan tentang bagaimana caranya membuat server samba. 
+
+Apasih server samba itu? Mudahnya si begini, pernah ga kalian ke warnet? Nah biasanya kan ada beberapa warnet yang ada file sharing-nya. Jadi walopun filenya ada di OP-nya, kita client tetep bisa ngambil file itu tanpa hardware apapun, jadi kita tinggal akses aja network sharing.
+
+Nah, disini saya akan memberi tau bagaimana cara membuatnya.
+
+##### Yang Pertama
+
+Kita install dulu hal yang dibutuhkan.
+
+```console
+apt install samba-client samba-common cifs-utils
+```
+##### Yang Kedua
+
+Kita edit file smb.conf
+
+```console
+nano /etc/samba/smb.conf
+```
+dan isi dengan
+
+```console
+[global]
+workgroup = WORKGROUP
+server string = Samba Server %v
+netbios name = ubuntu
+security = user
+map to guest = bad user
+dns proxy = no
+
+#============================ Share Definitions ============================== 
+
+[Anonymous]
+path = /samba/anonymous
+browsable =yes
+writable = yes
+guest ok = yes
+read only = no
+force user = nobody
+```
+
+Lalu buat folder 
+
+```console
+mkdir -p /samba/anonymous
+```
+Setelah itu, set permissionnya
+```console
+chmod -R 0775 /samba/anonymous
+chown -R nobody:nogroup /samba/anonymous
+```
+Dan restart sambanya 
+
+```console
+service smbd restart
+```
+
+##### Yang Ketiga
+
+Selanjutnya, kita membuat group dan user
+
+```console
+addgroup smbgrp
+useradd till -G smbgrp
+smbpasswd -a till
+```
+
+Lalu kita diminta buat password, isi sesuai keinginan kalian.
+
+Selanjutnya, kita buat folder namanya "secured" di dalam /samba folder
+
+```console
+mkdir -p /samba/secured
+cd /samba
+chmod -R 0770 secured
+chown root:smbgrp secured
+```
+
+Lalu kita edit lagi file "smb.conf" dan tambahkan
+
+```console
+[secured]
+ path = /samba/secured
+ valid users = @smbgrp
+ guest ok = no
+ writable = yes
+ browsable = yes
+```
+
+dipaling bawah file.
+
+Setelah itu restart lagi
+
+```console
+service smbd restart
+```
+
+##### Yang Kelima
+
+Kita buat password untuk samba servernya di folder /mnt 
+
+```console
+nano .smbcredentials
+```
+dan isi dengan
+
+```console
+username=user (bebas)
+password=password (bebas)
+```
+Setelah itu, kita ubah permission filenya agar hanya user kita yang bisa mengubahnya dan membukanya
+
+```console
+chmod 600 .smbcredentials 
+```
+
+Lalu, kita edit file fstab, dan isi seperti ini
+
+```console
+nano /etc/fstab
+```
+dan isi seperti ini
+
+```console
+//192.168.100.119/secured /mnt/samba cifs credentials=/mnt/.smbcredentials,defaults 0 0
+```
+
+Selanjutnya, kita coba konek ke samba server dari device lain.
+
+Yang perlu kita lakukan yang pertama adalah
+
+Pastikan kita sudah menginstall samba-client, kalo belum install dulu
+
+```console
+apt install samba-client
+```
+lalu, edit "/etc/fstab" device yang pengen kita konekin, dan masukkan seperti yang dimasukkan /etc/fstab yang diatas.
+
+Kalau sudah, ketikkan 
+```console
+smbclient -I 192.168.100.119 -U till -L share
+```
+Lalu kalian akan dimintakan password, dan masukkan password yang telah kalian buat
+
+![Placeholder](/assets/images/samba3.png)
+
+Lalu kita mount
+
+```console
+mount -a
+```
+Dan kita liat disini
+
+Sebelum di mount
+
+![Placeholder](/assets/images/samba4.png)
+
+Setelah di mount
+
+![Placeholder](/assets/images/samba5.png)
+
+Dan saya mencoba membuat folder dari device asli saya
+
+![Placeholder](/assets/images/samba6.png)
+
+Dan ternyata terbuat juga di samba server yang saya buat di virtual-box saya.
+
+![Placeholder](/assets/images/samba7.png)
+
+## Terima Kasih
+Mungkin itu yang dapat saya tulis kali ini, sebagaimana biasanya, kritik & saran sangat diperlukan dalam tulisan saya agar menjadi lebih baik lagi kedepannya. Jadi, kalian bisa hubungi saya lewat Twitter, Instagram yang tertera dibagian paling bawah web saya, atau di menu kritik & saran yang berada dipojok kanan atas web saya. 
+
+Terima Kasih.
+
+
+
+
+
+
+
+

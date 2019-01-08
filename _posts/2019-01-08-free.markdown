@@ -1,0 +1,27 @@
+---
+layout: post
+title: "Sekarang, free user bisa menikmati layanan Private Repository secara Unlimited di GitHub"
+date: 2019-01-08
+description: Breaking News
+image: /assets/images/github.png
+author: Muhammad Dhia Ul Haq
+tags:
+ - Tech
+---
+
+
+Jika Anda adalah pengguna GitHub, tetapi Anda tidak membayar, ini minggu yang baik. Secara historis, GitHub selalu menawarkan akun gratis tetapi peringatannya adalah bahwa kode Anda harus publik. Untuk mendapatkan repositori pribadi, Anda harus membayar. Mulai besok, batasan itu hilang. Pengguna GitHub gratis sekarang mendapatkan proyek pribadi tanpa batas dengan hingga tiga kolaborator.
+
+Jumlah kolaborator adalah satu-satunya batasan di sini dan tidak ada perubahan pada bagaimana layanan menangani repositori publik, yang masih dapat memiliki kolaborator tanpa batas.
+
+Ini terasa seperti tanda niat baik atas nama Microsoft, yang menutup akuisisi GitHub Oktober lalu, dengan mantan CEO Xamarin Nat Friedman mengambil alih sebagai CEO GitHub. Beberapa pengembang agak gugup tentang akuisisi (meskipun rasanya seperti sebagian besar telah setuju dengan itu). Ini juga merupakan dugaan yang adil untuk mengasumsikan bahwa model GitHub untuk mendapatkan uang layanan sedikit berbeda dari Microsoft. Microsoft tidak perlu mencoba untuk mendapatkan uang dari tim kecil - dari situlah sebagian besar pendapatannya berasal. Sebaliknya, perusahaan lebih tertarik untuk membuat perusahaan besar menggunakan layanan ini.
+
+Berbicara tentang tim, GitHub juga hari ini mengumumkan bahwa mereka mengubah nama suite Pengembang GitHub menjadi ‘GitHub Pro.’ Perusahaan mengatakan hal itu untuk “membantu pengembang mengidentifikasi alat yang mereka butuhkan dengan lebih baik.”
+
+Tetapi yang mungkin lebih penting adalah bahwa GitHub Business Cloud dan GitHub Enterprise (sekarang disebut Enterprise Cloud dan Enterprise Server) telah menjadi satu dan sekarang dijual di bawah label ‘GitHub Enterprise’ dan harga fitur per pengguna.
+
+Pengumuman repositori pribadi gratis mungkin mengejutkan beberapa pesaing GitHub, tetapi inilah yang kami dengar dari CEO GitLab, Sid Sijbrandij: “GitHub hari ini mengumumkan peluncuran repositori pribadi gratis dengan hingga tiga kolaborator. GitLab telah menawarkan kolaborator tanpa batas pada repositori pribadi sejak awal. Kami percaya Microsoft lebih fokus pada menghasilkan pendapatan dengan Azure dan lebih sedikit pada pengisian daya untuk perangkat lunak DevOps. Di GitLab, kami percaya akan masa depan multi-cloud di mana organisasi menggunakan beberapa platform cloud publik. "
+
+Catatan: cerita ini dijadwalkan untuk besok, tetapi karena embargo rusak, kami memutuskan untuk menerbitkan hari ini. Pembaruan akan ditayangkan besok.
+
+[Sumber: https://techcrunch.com/2019/01/07/github-free-users-now-get-unlimited-private-repositories/?fbclid=IwAR2CzVRz_ctUdQkd_NraprcNnilWlB5fi3GnleSY4SBLXABgKsBHhdXH1VI](https://techcrunch.com/2019/01/07/github-free-users-now-get-unlimited-private-repositories/?fbclid=IwAR2CzVRz_ctUdQkd_NraprcNnilWlB5fi3GnleSY4SBLXABgKsBHhdXH1VI).

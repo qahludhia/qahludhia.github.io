@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Linux #21: Sticky Bit"
+title: "Linux #22: Sticky Bit"
 date: 2019-01-07
 description: Membuat permission Sticky Bit
 image: /assets/images/linux.jpg

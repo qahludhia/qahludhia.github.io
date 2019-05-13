@@ -1,0 +1,17 @@
+---
+layout: post
+title: "Sorry"
+date: 2019-13-05
+description: 
+image: /assets/images/Were-Sorry.png
+author: Muhammad Dhia Ul Haq
+tags: 
+---
+Mohon maaf atas ketidak updatean website yang satu ini, karena saya juga sedang sibuk mengurus web yang lainnya. 
+
+Saya punya rencana untuk melanjutkan web ini, tapi nanti pada waktunya. Dimohon untuk pembaca untuk bersabar.
+
+Kalian bisa membaca web saya yang berisi artikel gado-gado tentang pengetahuan [disini]](https://dhiaco.com).
+
+Terima Kasih karena masih setia membaca web ini.
+![Placeholder](/assets/images/terima-kasih.jpeg)

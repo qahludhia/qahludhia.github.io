@@ -5,7 +5,7 @@ date: 2019-13-05
 description: 
 image: /assets/images/Were-Sorry.png
 author: Muhammad Dhia Ul Haq
-tags: 
+tags: MIND
 ---
 Mohon maaf atas ketidak updatean website yang satu ini, karena saya juga sedang sibuk mengurus web yang lainnya. 
 
